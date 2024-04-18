@@ -3,7 +3,7 @@ import HeroSection from '../components/HeroSection'
 const About = () => {
   return (
     <div>
-        <HeroSection />
+        {/* <HeroSection /> */}
     </div>
   )
 }

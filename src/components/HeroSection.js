@@ -11,7 +11,7 @@ const HeroSection = () => {
             Car Rental - <br className="hidden lg:block" /> Search & Book Online
             Cars Now!
           </h1>
-          <div className="mb-8 leading-relaxed text-xl text-black flex flex-wrap gap-2 text-left">
+          <div className="mb-8 py-2 font-semibold leading-relaxed text-xl text-black flex flex-wrap gap-2 text-left">
             <div className="flex items-center gap-1">
               <IoCheckmark className="text-2xl" />
               <span className="whitespace-nowrap">
@@ -29,7 +29,7 @@ const HeroSection = () => {
               </span>
             </div>
           </div>
-          <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
+          <div className="flex flex-wrap gap-3 justify-start">
             <button
               className="inline-flex items-center gap-x-2 text-white border-gray-900 transition duration-300 border-2 
             py-2 px-6 focus:outline-none bg-gray-900 hover:bg-gray-800 rounded-full font-semibold text-lg whitespace-nowrap"
