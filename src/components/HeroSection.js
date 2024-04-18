@@ -14,8 +14,8 @@ const HeroSection = () => {
           <div className="mb-8 py-2 font-semibold leading-relaxed text-xl text-black flex flex-wrap gap-2 text-left">
             <div className="flex items-center gap-1">
               <IoCheckmark className="text-2xl" />
-              <span className="whitespace-nowrap">
-                Free cancellations on most bookings
+              <span className="">
+                Free cancellations
               </span>
             </div>
             <div className="flex items-center gap-1">
