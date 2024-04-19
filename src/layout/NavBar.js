@@ -3,7 +3,7 @@ import logo from "../assets/rideLogo1.png"
 import userImage from "../assets/userImage.png"
 const NavBar = () => {
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="border-gray-200 bg-gray-900">
   <div className="max-w-screen-xl md:container flex flex-wrap items-center justify-between mx-auto py-4 px-4 md:px-0">
     <a
       href="#"

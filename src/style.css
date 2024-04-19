@@ -3,3 +3,7 @@
     background-repeat: no-repeat;
     background-position: bottom;
 }
+
+.section-heading {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

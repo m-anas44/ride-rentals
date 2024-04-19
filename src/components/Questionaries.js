@@ -2,7 +2,7 @@ import React from "react";
 import { questionAnswer } from "../mockData/questionariesData";
 const Questionaries = () => {
   return (
-    <section className="md:container mx-auto border rounded-lg mb-4">
+    <section className="container mx-auto border rounded-lg mb-4">
       <h2 className="bg-gray-900 text-slate-100 leading-relaxed p-3 text-xl font-bold rounded-t-lg">
         Frequently Asked Questions
       </h2>
@@ -17,7 +17,7 @@ const Questionaries = () => {
             <h2 id={`accordion-flush-heading-${key}`}>
               <button
                 type="button"
-                className="flex items-center justify-between w-full py-5 px-3 font-medium text-lg rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
+                className="flex items-center justify-between w-full py-5 text-left px-3 font-medium text-lg rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
                 data-accordion-target={`#accordion-flush-body-${key}`}
                 aria-expanded="true"
                 aria-controls={`accordion-flush-body-${key}`}
