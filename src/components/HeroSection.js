@@ -5,7 +5,7 @@ import { TbArrowBigRightLine } from "react-icons/tb";
 const HeroSection = () => {
   return (
     <section className="text-gray-600 body-font hero-section px-3 py-20">
-      <div className="container mx-auto flex items-center flex-col">
+      <div className="md:container mx-auto flex items-center flex-col">
         <div className="w-full">
           <h1 className="title-font sm:text-5xl text-3xl mb-4 font-bold text-gray-900">
             Car Rental - <br className="hidden lg:block" /> Search & Book Online
