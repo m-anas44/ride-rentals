@@ -1,8 +1,9 @@
 import React from 'react'
+import ClientFeedback from '../components/ClientFeedback'
 const About = () => {
   return (
     <div>
-        about page
+        <ClientFeedback/>
     </div>
   )
 }
