@@ -5,12 +5,6 @@ import feature3 from "../assets/usp_wallet@1x.png";
 const ProductFeatures = () => {
   return (
     <section className="text-gray-600 body-font">
-      <div className="text-center mt-20">
-          <h2 className="sm:text-3xl text-2xl mb-3 font-semibold text-gray-800 section-heading">
-            Our Services
-          </h2>
-          <div className="h-1 rounded bg-gray-400 w-14 mx-auto"></div>
-        </div>
       <div className="container px-4 py-8 mx-auto flex flex-wrap">
         <div className="flex flex-wrap -m-2">
           <div className="p-2 lg:w-1/3 w-full">

@@ -2,7 +2,7 @@ import React from "react";
 import { questionAnswer } from "../mockData/questionariesData";
 const Questionaries = () => {
   return (
-    <section className="container mx-auto border rounded-lg mb-4">
+    <section className="container mx-auto border rounded-lg my-4">
       <h2 className="bg-gray-900 text-slate-100 leading-relaxed p-3 text-xl font-bold rounded-t-lg">
         Frequently Asked Questions
       </h2>

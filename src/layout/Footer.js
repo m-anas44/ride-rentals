@@ -3,7 +3,7 @@ import logo from "../assets/rideLogo1.png";
 const Footer = () => {
   return (
     <footer className="body-font bg-gray-900">
-      <div className="px-4 sm:px-6 py-12 md:py-14 lg:container mx-auto flex md:items-center lg:items-start md:flex-col lg:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div className="px-4 sm:px-6 pt-10 pb-4 md:pt-12 lg:container mx-auto flex md:items-center lg:items-start md:flex-col lg:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-full mb-3 lg:w-1/2">
           <a className="flex title-font font-medium items-center text-gray-100">
             <img src={logo} alt="logo" className="h-11"></img>

@@ -3,8 +3,8 @@ import React from "react";
 const WhyRideRental = () => {
   return (
     <section className="text-gray-600 body-font" id="rideRental">
-      <div className="container px-5 py-14 mx-auto">
-        <div className="flex flex-col text-center w-full mb-20">
+      <div className="px-5 mx-auto">
+        <div className="container flex flex-col text-center w-full mx-auto">
           <h2 className="text-sm text-indigo-500 tracking-widest font-bold title-font mb-1">
             WHY
           </h2>
