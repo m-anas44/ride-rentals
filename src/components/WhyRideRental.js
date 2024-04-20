@@ -2,14 +2,14 @@ import React from "react";
 
 const WhyRideRental = () => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 body-font" id="rideRental">
       <div className="container px-5 py-14 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
           <h2 className="text-sm text-indigo-500 tracking-widest font-bold title-font mb-1">
             WHY
           </h2>
           <h2 className="sm:text-3xl text-2xl mb-3 font-semibold text-gray-800 section-heading">
-            Categories you are looking for
+            Rent a Car with RideRental
           </h2>
           <div className="h-1 rounded bg-gray-400 w-14 mx-auto"></div>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base mt-3">

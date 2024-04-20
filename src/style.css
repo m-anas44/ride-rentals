@@ -7,3 +7,7 @@
 .section-heading {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.bg-blur {
+    background-color: rgba(255, 255, 255, 0.226);
+}

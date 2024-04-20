@@ -19,7 +19,6 @@ const Questionaries = () => {
                 type="button"
                 className="flex items-center justify-between w-full py-5 text-left px-3 font-medium text-lg rtl:text-right text-gray-500 border-b border-gray-200 gap-3"
                 data-accordion-target={`#accordion-flush-body-${key}`}
-                aria-expanded="true"
                 aria-controls={`accordion-flush-body-${key}`}
               >
                 <span>{questionAnswer[key].question}</span>

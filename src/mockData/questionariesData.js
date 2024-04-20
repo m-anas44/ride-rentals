@@ -19,7 +19,7 @@ export const questionAnswer = {
       "Customers are responsible for paying for their own fuel consumption. Each car is provided with a level of fuel and customers have to return the vehicle with the same level of fuel as they were given. We also provide an option to the customers, where they can pay for the number of kilometers done by the car at the specified rates for each car category, starting from the point the car leaves the office / Car Owner’s / Driver’s location.",
   },
   5: {
-    question: "Can I register my car with RENTLY and start earning?",
+    question: "Can I register my car with RideRentals and start earning?",
     answer:
       "Yes, if your car meets our requirements, you may register your car and start making money right away.",
   },
