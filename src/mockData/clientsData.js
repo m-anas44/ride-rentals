@@ -4,17 +4,17 @@ import client3 from "../assets/client3.png"
 export const clients = {
     1: {
         name: "Jenna Ortega",
-        message: "Absolutely Magnificent Services",
+        message: "Brilliant service! Very efficient, cost effective and the fleet is in perfect condition. Strongly recommended for all customers seeking car rentals in Pakistan.",
         image: client1,
     },
     2: {
         name: "John Smith",
-        message: "A fine platform for Car Rental Services",
+        message: "Excellent service. Very professional people. Cars are in very good condition. Airport pick and drop service is aonvince.",
         image: client2,
     },
     3: {
         name: "Alvaro Morte",
-        message: "Gigantic Services",
+        message: "Excellent service with brand new vehicles. Driving Staff is very cooperative. Very professional dealing by the management and market competitive offerings overall. highly recommended",
         image: client3,
     }
 }
