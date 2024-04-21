@@ -22,7 +22,7 @@ const Home = () => {
             class="py-2.5 px-5 me-2 mb-2 text-sm flex flex-nowrap gap-x-2 items-center font-medium text-gray-100 focus:outline-none rounded-md border bg-gray-900 hover:bg-gray-700"
           >
             <span>See All</span>
-            <FaArrowRightLong />
+            <FaArrowRightLong className="hover:translate-x-1 duration-300"/>
           </button>
         </div>
         <VehicleList />
