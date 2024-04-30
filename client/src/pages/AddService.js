@@ -31,7 +31,7 @@ const AddService = () => {
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" },
       });
-      const jsonData  = await response.json();
+      const jsonData = await response.json();
       localStorage.setItem("service", JSON.stringify(jsonData));
       console.log(jsonData);
       if (!response.ok) {

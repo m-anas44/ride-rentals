@@ -17,11 +17,13 @@ app.listen(PORT, () => {
   console.log(`Server is running on the port ${PORT}`);
 });
 
+const uri = `mongodb+srv://manasansari1438:3h2dTwHiBARX8R7Q@cluster47.hui9pwa.mongodb.net/`;
+
 mongoose
-  .connect(
-    "mongodb+srv://manasansari1438:3h2dTwHiBARX8R7Q@cluster47.hui9pwa.mongodb.net/",
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
+  .connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -33,8 +35,8 @@ const serviceRoutes = require("./routes/ServicesRoute");
 const Service = require("./models/ServiceModel");
 app.use("/api/services", serviceRoutes);
 
-app.post('/api/services',async(req, res)=>{
-  const service = new Service(req.body)
-  const result = await service.save()
-  res.send(result)
-})
+app.post("/api/services", async (req, res) => {
+  const service = new Service(req.body);
+  const result = await service.save();
+  res.send(result);
+});
