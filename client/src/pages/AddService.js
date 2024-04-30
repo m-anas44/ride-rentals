@@ -3,20 +3,46 @@ import MiniNavBar from "../layout/MiniNavBar";
 import { ServiceData } from "../mockData/ServiceFormData";
 import image from "../assets/corolla.jpg";
 const AddService = () => {
-  const [name, setName] = useState("")
-  const [type, setType] = useState("")
-  const [model, setModel] = useState("")
-  const [seat, setSeat] = useState("")
-  const [functionality, setFunctionality] = useState("")
-  const [color, setColor] = useState("")
-  const [overtime, setOvertime] = useState("")
-  const [price, setPrice] = useState("")
+  const [name, setName] = useState("");
+  const [type, setType] = useState("");
+  const [model, setModel] = useState("");
+  const [seat, setSeat] = useState("");
+  const [functionality, setFunctionality] = useState("");
+  const [color, setColor] = useState("");
+  const [overtime, setOvertime] = useState("");
+  const [price, setPrice] = useState("");
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const data = { name, type, model, seat, functionality, color, overtime, price };
-    console.log(data)
+    const data = {
+      name,
+      type,
+      model,
+      seat,
+      functionality,
+      color,
+      overtime,
+      price,
+    };
+
+    try {
+      const response = await fetch("http://localhost:5000/api/services", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" },
+      });
+      const jsonData  = await response.json();
+      localStorage.setItem("service", JSON.stringify(jsonData));
+      console.log(jsonData);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+    } catch (error) {
+      console.error("add service error", error);
+      // Handle errors (e.g., show an error message to the user)
+    }
   };
+
   return (
     <section className="container mx-auto">
       <MiniNavBar />
@@ -50,7 +76,7 @@ const AddService = () => {
                 type="text"
                 name="name"
                 value={name}
-                onChange={(e)=>setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. corolla"
                 required
               />
@@ -65,11 +91,16 @@ const AddService = () => {
               <select
                 id="grid-type-name"
                 value={type}
-                onChange={(e)=>setType(e.target.value)}
+                name="type"
+                onChange={(e) => setType(e.target.value)}
                 className="appearance-none block mb-2 w-full bg-gray-200 border border-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
               >
                 {ServiceData.types.map((item, index) => {
-                  return <option key={index}>{item}</option>;
+                  return (
+                    <option key={index} value={item}>
+                      {item}
+                    </option>
+                  );
                 })}
               </select>
             </div>
@@ -83,9 +114,10 @@ const AddService = () => {
               <input
                 className="appearance-none block mb-2 w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-model-name"
-                type="number"
+                name="model"
+                type="text"
                 value={model}
-                onChange={(e)=>setModel(e.target.value)}
+                onChange={(e) => setModel(e.target.value)}
                 placeholder="e.g. 2018"
               />
             </div>
@@ -101,11 +133,16 @@ const AddService = () => {
               <select
                 id="grid-seats-name"
                 value={seat}
-                onChange={(e)=>setSeat(e.target.value)}
+                name="seat"
+                onChange={(e) => setSeat(e.target.value)}
                 className="appearance-none block mb-2 w-full bg-gray-200 border border-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
               >
                 {ServiceData.seats.map((item, index) => {
-                  return <option key={index}>{item}</option>;
+                  return (
+                    <option key={index} value={item}>
+                      {item}
+                    </option>
+                  );
                 })}
               </select>
             </div>
@@ -119,11 +156,16 @@ const AddService = () => {
               <select
                 id="grid-functionality"
                 value={functionality}
-                onChange={(e)=>setFunctionality(e.target.value)}
+                name="functionality"
+                onChange={(e) => setFunctionality(e.target.value)}
                 className="appearance-none block mb-2 w-full bg-gray-200 border border-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
               >
                 {ServiceData.functionality.map((item, index) => {
-                  return <option key={index}>{item}</option>;
+                  return (
+                    <option key={index} value={item}>
+                      {item}
+                    </option>
+                  );
                 })}
               </select>
             </div>
@@ -137,11 +179,16 @@ const AddService = () => {
               <select
                 id="grid-color-name"
                 value={color}
-                onChange={(e)=>setColor(e.target.value)}
+                name="color"
+                onChange={(e) => setColor(e.target.value)}
                 className="appearance-none block mb-2 w-full bg-gray-200 border border-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
               >
                 {ServiceData.colors.map((item, index) => {
-                  return <option key={index}>{item}</option>;
+                  return (
+                    <option key={index} value={item}>
+                      {item}
+                    </option>
+                  );
                 })}
               </select>
             </div>
@@ -155,14 +202,18 @@ const AddService = () => {
                 Overtime <small>per hour</small>
               </label>
               <select
-              typeof="Number"
                 id="grid-overtime"
-                onChange={(e)=>setOvertime(e.target.value)}
+                onChange={(e) => setOvertime(e.target.value)}
                 value={overtime}
+                name="overtime"
                 className="appearance-none block mb-2 w-full bg-gray-200 border border-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
               >
                 {ServiceData.overtimeRS.map((item, index) => {
-                  return <option key={index}>{item}</option>;
+                  return (
+                    <option key={index} value={item}>
+                      {item}
+                    </option>
+                  );
                 })}
               </select>
             </div>
@@ -176,9 +227,10 @@ const AddService = () => {
               <input
                 className="appearance-none block mb-2 w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-price"
-                type="number"
                 value={price}
-                onChange={(e)=>setPrice(e.target.value)}
+                name="price"
+                type="text"
+                onChange={(e) => setPrice(e.target.value)}
                 placeholder="e.g. 3500"
               />
             </div>

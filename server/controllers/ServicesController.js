@@ -1,8 +1,4 @@
-const express = require("express");
 const Services = require("../models/ServiceModel");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const app = express();
 
 exports.getAllServices = async (req, res) => {
   try {
@@ -13,14 +9,10 @@ exports.getAllServices = async (req, res) => {
   }
 };
 
-// app.use(cors);
-// app.use(bodyParser.json());
-
-// app.post("/api/services", async (req, res) => {
-//   const { name, type, model, seat, functionality, color, overtime, price } =
+// exports.addNewService = async (req, res) => {
+//   let { name, type, model, seat, functionality, color, overtime, price } =
 //     req.body;
-
-//   const addingNewService = new Services({
+//   const serviceData = {
 //     name,
 //     type,
 //     model,
@@ -29,39 +21,16 @@ exports.getAllServices = async (req, res) => {
 //     color,
 //     overtime,
 //     price,
-//   });
+//   };
 
+//   const creatingService = new Service(serviceData);
+//   console.log("creating service: ", creatingService);
 //   try {
-//     const savedService = await addingNewService.save();
-//     res.status(201).json(savedService);
+//     const newService = await creatingService.save();
+//     res.status(201).json(newService);
+//     console.log(newService);
 //   } catch (error) {
-//     console.error('Error creating service:', err);
+//     console.log("error in creating new service", error);
 //     res.status(500).json({ message: error.message });
 //   }
-// });
-
-exports.addNewService = async (req, res) => {
-  let { name, type, model, seat, functionality, color, overtime, price } =
-    req.body;
-  const serviceData = {
-    name,
-    type,
-    model,
-    seat,
-    functionality,
-    color,
-    overtime,
-    price,
-  };
-
-  const creatingService = new Service(serviceData);
-
-  try {
-    const newService = await creatingService.save();
-    res.status(201).json(newService);
-    console.log(newService)
-  } catch (error) {
-    console.log("error in creating new service", error);
-    res.status(500).json({ message: error.message });
-  }
-};
+// };

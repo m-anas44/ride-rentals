@@ -5,9 +5,6 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const uri =
-  "mongodb+srv://manasansari1438:yuDcd2wbksIIAOVT@ride-rentals.hiunguq.mongodb.net/";
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
@@ -21,7 +18,10 @@ app.listen(PORT, () => {
 });
 
 mongoose
-  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(
+    "mongodb+srv://manasansari1438:3h2dTwHiBARX8R7Q@cluster47.hui9pwa.mongodb.net/",
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  )
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -30,4 +30,11 @@ mongoose
   });
 
 const serviceRoutes = require("./routes/ServicesRoute");
+const Service = require("./models/ServiceModel");
 app.use("/api/services", serviceRoutes);
+
+app.post('/api/services',async(req, res)=>{
+  const service = new Service(req.body)
+  const result = await service.save()
+  res.send(result)
+})
