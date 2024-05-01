@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/rideLogo1.png";
 const Footer = () => {
   return (
@@ -51,7 +51,9 @@ const Footer = () => {
             </button>
           </div>
         </div>
-        <div className="flex-1 p-4 flex flex-col lg:ml-5 w-full mt-8 md:mt-0 rounded-md bg-blur text-gray-200 border-4 border-opacity-45 border-gray-200">
+        <form
+          className="flex-1 p-4 flex flex-col lg:ml-5 w-full mt-8 md:mt-0 rounded-md bg-blur text-gray-200 border-4 border-opacity-45 border-gray-200"
+        >
           <h2 className=" text-2xl mb-1 font-bold title-font text-gray-900">
             Give us a Feedback
           </h2>
@@ -80,7 +82,7 @@ const Footer = () => {
           <button className="text-white bg-gray-900 border-0 py-2 px-6 focus:outline-none hover:bg-gray-800 rounded text-lg">
             Submit
           </button>
-        </div>
+        </form>
       </div>
     </footer>
   );

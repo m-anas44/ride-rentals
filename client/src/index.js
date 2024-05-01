@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, {StrictMode} from "react";
+import ReactDOM from 'react-dom'; // Import createRoot
 import NavBar from "./layout/NavBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -8,20 +8,26 @@ import Footer from "./layout/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contact from "./pages/Contact";
 import AddService from "./pages/AddService";
+
 const App = function () {
   return (
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path="/" Component={Home} />
-        <Route path="/about" Component={About} />
-        <Route path="/services" Component={Services} />
-        <Route path="/contact" Component={Contact} />
-        <Route path="/addService" Component={AddService} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/addService" element={<AddService />} />
       </Routes>
       <Footer />
     </BrowserRouter>
   );
 };
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById('root')
+);

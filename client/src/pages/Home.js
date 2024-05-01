@@ -6,7 +6,7 @@ import CategoryDisplay from "../components/CategoryDisplay";
 import WhyRideRental from "../components/WhyRideRental";
 import VehicleList from "../components/VehicleList";
 import { FaArrowRightLong } from "react-icons/fa6";
-import AddService from "./AddService";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -20,13 +20,15 @@ const Home = () => {
           <h2 className="text-3xl font-semibold text-gray-800 section-heading">
             Services
           </h2>
-          <button
-            type="button"
-            class="py-2.5 px-5 me-2 mb-2 text-sm flex flex-nowrap gap-x-2 items-center font-medium text-gray-100 focus:outline-none rounded-md border bg-gray-900 hover:bg-gray-700"
-          >
-            <span>See All</span>
-            <FaArrowRightLong className="hover:translate-x-1 duration-300" />
-          </button>
+          <Link to={"/services"}>
+            <button
+              type="button"
+              class="py-2.5 px-5 me-2 mb-2 text-sm flex flex-nowrap gap-x-2 items-center font-medium text-gray-100 focus:outline-none rounded-md border bg-gray-900 hover:bg-gray-700"
+            >
+              <span>See All</span>
+              <FaArrowRightLong className="hover:translate-x-1 duration-300" />
+            </button>
+          </Link>
         </div>
         <VehicleList />
       </div>

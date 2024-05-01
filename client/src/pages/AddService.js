@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MiniNavBar from "../layout/MiniNavBar";
 import { ServiceData } from "../mockData/ServiceFormData";
 import image from "../assets/corolla.jpg";
+import toast, {Toaster} from "react-hot-toast";
 const AddService = () => {
   const [name, setName] = useState("");
   const [type, setType] = useState("");
@@ -25,27 +26,38 @@ const AddService = () => {
       price,
     };
 
-    try {
-      const response = await fetch("http://localhost:5000/api/services", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
-      });
-      const jsonData = await response.json();
-      localStorage.setItem("service", JSON.stringify(jsonData));
-      console.log(jsonData);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
+    const creatingService = new Promise(async (resolve, reject) => {
+      try {
+        const response = await fetch("http://localhost:5000/api/services", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+        });
+        const jsonData = await response.json();
+        localStorage.setItem("service", JSON.stringify(jsonData));
+        console.log(jsonData);
+        if(response.ok){
+          resolve()
+        } else {
+          reject()
+        }
+      } catch (error) {
+        reject()
+        console.error("add service error", error);
       }
-    } catch (error) {
-      console.error("add service error", error);
-      // Handle errors (e.g., show an error message to the user)
-    }
+    });
+
+    await toast.promise(creatingService, {
+      loading: "Saving the service...",
+      success: <b>Service Added!</b>,
+      error: "Error adding new service",
+    })
   };
 
   return (
     <section className="container mx-auto">
       <MiniNavBar />
+      <Toaster position="top-center" /> 
       <h2 className="text-2xl font-bold p-4">Add New Service</h2>
       <div className="flex flex-col md:flex-row gap-8 mb-3">
         <div className="flex flex-col gap-3 p-2">
@@ -56,9 +68,9 @@ const AddService = () => {
           />
           <button
             type="button"
-            className="text-gray-900 w-full bg-white border tracking-wider border-gray-300 focus:outline-none hover:bg-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+            className="text-gray-900 w-full bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
           >
-            Select
+            Default Selected
           </button>
         </div>
         <form className="w-full p-2" onSubmit={handleFormSubmit}>
@@ -94,6 +106,7 @@ const AddService = () => {
                 name="type"
                 onChange={(e) => setType(e.target.value)}
                 className="appearance-none block mb-2 w-full bg-gray-200 border border-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                required
               >
                 {ServiceData.types.map((item, index) => {
                   return (
@@ -119,6 +132,7 @@ const AddService = () => {
                 value={model}
                 onChange={(e) => setModel(e.target.value)}
                 placeholder="e.g. 2018"
+                required
               />
             </div>
           </div>
@@ -136,6 +150,7 @@ const AddService = () => {
                 name="seat"
                 onChange={(e) => setSeat(e.target.value)}
                 className="appearance-none block mb-2 w-full bg-gray-200 border border-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                required
               >
                 {ServiceData.seats.map((item, index) => {
                   return (
@@ -159,6 +174,7 @@ const AddService = () => {
                 name="functionality"
                 onChange={(e) => setFunctionality(e.target.value)}
                 className="appearance-none block mb-2 w-full bg-gray-200 border border-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                required
               >
                 {ServiceData.functionality.map((item, index) => {
                   return (
@@ -182,6 +198,7 @@ const AddService = () => {
                 name="color"
                 onChange={(e) => setColor(e.target.value)}
                 className="appearance-none block mb-2 w-full bg-gray-200 border border-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                required
               >
                 {ServiceData.colors.map((item, index) => {
                   return (
@@ -207,6 +224,7 @@ const AddService = () => {
                 value={overtime}
                 name="overtime"
                 className="appearance-none block mb-2 w-full bg-gray-200 border border-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                required
               >
                 {ServiceData.overtimeRS.map((item, index) => {
                   return (
@@ -232,6 +250,7 @@ const AddService = () => {
                 type="text"
                 onChange={(e) => setPrice(e.target.value)}
                 placeholder="e.g. 3500"
+                required
               />
             </div>
           </div>
