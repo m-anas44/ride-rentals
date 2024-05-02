@@ -7,15 +7,15 @@ const NavBar = () => {
   return (
     <nav className="border-gray-200 bg-gray-900 sticky top-0 z-10">
       <div className="max-w-screen-xl md:container flex flex-wrap items-center justify-end gap-5 mx-auto py-4 px-4 md:px-0">
-        <Link
-          to={"/"}
+        <a
+          href={"/"}
           className="flex items-center mr-auto space-x-3 rtl:space-x-reverse"
         >
           <img src={logo} className="h-11" alt="Flowbite Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             RideRentals
           </span>
-        </Link>
+        </a>
         <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
