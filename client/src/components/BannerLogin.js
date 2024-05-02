@@ -13,7 +13,7 @@ class BannerLogin extends React.Component {
             <img src={logo} alt="logo" className="h-8"></img>
             <span className="ml-3 text-xl">RideRentals</span>
           </a>
-          <p className="flex items-center text-sm font-normal text-nowrap text-gray-500 dark:text-gray-400">
+          <p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
             RideRentals offers one of the most professional car rental services.
           </p>
         </div>
