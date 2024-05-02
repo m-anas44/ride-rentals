@@ -10,7 +10,7 @@ const Footer = () => {
             <span className="ml-3 text-xl">RideRentals</span>
           </a>
           <p className="mt-4 md:mt-8 text-sm md:text-base text-gray-500">
-            Car Rentals Pakistan offers one of the most professional car rental
+            RideRentals offers one of the most professional car rental
             services throughout Pakistan. <br /> Our services extend to all the
             major cities such as Islamabad, Lahore, Karachi, Faisalabad,
             Rawalpindi and Sialkot. You can use our cars to visit holiday

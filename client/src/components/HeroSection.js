@@ -2,6 +2,7 @@ import React from "react";
 import "../style.css";
 import { IoCheckmark } from "react-icons/io5";
 import { TbArrowBigRightLine } from "react-icons/tb";
+import { Link } from "react-router-dom";
 const HeroSection = () => {
   return (
     <section className="text-gray-600 body-font hero-section px-3 py-20">
@@ -14,9 +15,7 @@ const HeroSection = () => {
           <div className="mb-8 py-2 font-semibold leading-relaxed text-xl text-black flex flex-wrap gap-2 text-left">
             <div className="flex items-center gap-1">
               <IoCheckmark className="text-2xl" />
-              <span className="">
-                Free cancellations
-              </span>
+              <span className="">Free cancellations</span>
             </div>
             <div className="flex items-center gap-1">
               <IoCheckmark className="text-2xl" />
@@ -30,13 +29,15 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="flex flex-wrap gap-3 justify-start">
-            <button
-              className="inline-flex items-center gap-x-2 text-white border-gray-900 transition duration-300 border-2 
-            py-2 px-6 focus:outline-none bg-gray-900 hover:bg-gray-800 rounded-full font-semibold text-lg whitespace-nowrap"
-            >
-              <span>Explore Services</span>
-              <TbArrowBigRightLine />
-            </button>
+            <Link to={"/services"}>
+              <button
+                className="inline-flex items-center gap-x-2 text-white border-gray-900 transition duration-300 border-2 
+              py-2 px-6 focus:outline-none bg-gray-900 hover:bg-gray-800 rounded-full font-semibold text-lg whitespace-nowrap"
+              >
+                <span>Explore Services</span>
+                <TbArrowBigRightLine />
+              </button>
+            </Link>
             <button
               className="inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none
              hover:bg-gray-200 rounded-full text-lg font-semibold whitespace-nowrap"

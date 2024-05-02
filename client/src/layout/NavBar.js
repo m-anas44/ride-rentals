@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/rideLogo1.png";
-import userImage from "../assets/userImage.png";
+import userImage from "../assets/userImage.jpg";
 import { Navlinks } from "../mockData/NavLinks";
 const NavBar = () => {
   return (
