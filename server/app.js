@@ -17,7 +17,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on the port ${PORT}`);
 });
 
-const uri = `mongodb+srv://manasansari1438:3h2dTwHiBARX8R7Q@cluster47.hui9pwa.mongodb.net/`;
+const uri = `mongodb+srv://manasansari1438:3h2dTwHiBARX8R7Q@cluster47.hui9pwa.mongodb.net/test`;
 
 mongoose
   .connect(uri, {

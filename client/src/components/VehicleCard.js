@@ -7,8 +7,8 @@ import { IoIosColorFilter } from "react-icons/io";
 
 const VehicleCard = (props) => {
   return (
-    <section className="w-full mx-auto max-w-sm sm:max-w-xs bg-white border border-gray-200 rounded-lg shadow hover:scale-105 duration-300 transition-all ease-in-out">
-      <img className="rounded-t-lg" src={vehicleImage} alt="product image" />
+    <section className="w-full mx-auto bg-white border border-gray-200 rounded-lg shadow hover:scale-105 duration-300 transition-all ease-in-out">
+      <img className="rounded-t-lg" src={vehicleImage} alt="product" />
       <div className="p-3">
         <div className="flex justify-between items-center">
           <h5 className="text-lg md:text-xl font-bold tracking-tight text-gray-900">

@@ -27,7 +27,6 @@ const Services = () => {
     setSearchTerm(event.target.value.toLowerCase()); // Search term to lowercase
   };
 
-
   const filteredServices = useMemo(() => {
     let filteredData = services;
 
@@ -108,7 +107,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+      <div className="grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-5">
         {filteredServices.length > 0 ? (
           filteredServices.map(
             (
