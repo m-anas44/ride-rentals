@@ -1,5 +1,4 @@
 import React from "react";
-import vehicleImage from "../assets/corolla.jpg";
 import seat from "../assets/car-card/seat.png";
 import gear from "../assets/car-card/gaer.png";
 import time from "../assets/car-card/time.png";
@@ -8,14 +7,18 @@ import { IoIosColorFilter } from "react-icons/io";
 const VehicleCard = (props) => {
   return (
     <section className="w-full mx-auto bg-white border border-gray-200 rounded-lg shadow hover:scale-105 duration-300 transition-all ease-in-out">
-      <img className="rounded-t-lg" src={vehicleImage} alt="product" />
+      <img
+        className="rounded-t-lg max-h-[20ch] object-cover w-full"
+        src={props.img}
+        alt="product"
+      />
       <div className="p-3">
         <div className="flex justify-between items-center">
           <h5 className="text-lg md:text-xl font-bold tracking-tight text-gray-900">
             {props.name}
           </h5>
-          <button class="relative inline-flex items-center justify-center me-2 overflow-hidden text-[0.5rem] md:text-xs font-medium rounded-lg group bg-gradient-to-br from-indigo-400 via-blue-500 to-gray-950 text-white cursor-default">
-            <span class="relative px-5 py-2 rounded-md">{props.type}</span>
+          <button className="relative inline-flex items-center justify-center me-2 overflow-hidden text-[0.5rem] md:text-xs font-medium rounded-lg group bg-gradient-to-br from-indigo-400 via-blue-500 to-gray-950 text-white cursor-default">
+            <span className="relative px-5 py-2 rounded-md">{props.type}</span>
           </button>
         </div>
 
@@ -51,8 +54,8 @@ const VehicleCard = (props) => {
               PKR/day
             </sub>
           </span>
-          <button class="relative inline-flex items-center justify-center me-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-gray-600 to-gray-900 text-white ">
-            <span class="relative px-5 py-2 rounded-md">Book Now</span>
+          <button className="relative inline-flex items-center justify-center me-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-gray-600 to-gray-900 text-white ">
+            <span className="relative px-5 py-2 rounded-md">Book Now</span>
           </button>
         </div>
       </div>

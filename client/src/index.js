@@ -1,5 +1,5 @@
 import React, { StrictMode } from "react";
-import ReactDOM from "react-dom"; // Import   
+import { createRoot } from "react-dom/client"; // Updated import
 import NavBar from "./layout/NavBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -25,9 +25,13 @@ const App = function () {
   );
 };
 
-ReactDOM.render(
+// Get the root element from the DOM
+const rootElement = document.getElementById("root");
+
+// Create a root and render the application
+const root = createRoot(rootElement);
+root.render(
   <StrictMode>
     <App />
-  </StrictMode>,
-  document.getElementById("root")
+  </StrictMode>
 );

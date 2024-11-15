@@ -1,24 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import VehicleCard from "./VehicleCard";
+import { services } from "../mockData/services";
 
 const VehicleList = () => {
-  const [servies, setServices] = useState([]);
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        const res = await fetch("http://localhost:5000/api/services");
-        const data = await res.json();
-        const slicedData = data.slice(0, 4);
-        setServices(slicedData);
-      } catch (err) {
-        console.log("failed to fetch services", err);
-      }
-    };
-    fetchServices();
-  }, []);
+  const filteredServices = services.slice(0, 3);
   return (
-    <div className="container mx-auto grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-5 m-5">
-      {servies.map((value) => {
+    <div className="container mx-auto grid grid-cols-[repeat(auto-fill,_minmax(350px,_1fr))] gap-5 m-5">
+      {filteredServices.map((value) => {
         return (
           <div key={value._id} className="m-0 p-0">
             <VehicleCard
@@ -30,6 +18,7 @@ const VehicleList = () => {
               color={value.color}
               overtime={value.overtime}
               price={value.price}
+              img={value.img}
             />
           </div>
         );

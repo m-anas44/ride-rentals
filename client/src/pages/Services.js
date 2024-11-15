@@ -1,23 +1,10 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import VehicleCard from "../components/VehicleCard";
+import { services } from "../mockData/services";
 
 const Services = () => {
-  const [services, setServices] = useState([]);
   const [selectedType, setSelectedType] = useState("all"); // Initial selected type
   const [searchTerm, setSearchTerm] = useState("");
-
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        const res = await fetch("http://localhost:5000/api/services");
-        const data = await res.json();
-        setServices(data);
-      } catch (err) {
-        console.log("failed to fetch services", err);
-      }
-    };
-    fetchServices();
-  }, []);
 
   const handleTypeChange = (event) => {
     setSelectedType(event.target.value);
@@ -45,7 +32,7 @@ const Services = () => {
     }
 
     return filteredData.length > 0 ? filteredData : [];
-  }, [services, selectedType, searchTerm]);
+  }, [selectedType, searchTerm]);
 
   return (
     <section className="lg:container mx-auto p-2 mb-3">
@@ -123,6 +110,7 @@ const Services = () => {
                   color={value.color}
                   overtime={value.overtime}
                   price={value.price}
+                  img={value.img}
                 />
               </div>
             )
