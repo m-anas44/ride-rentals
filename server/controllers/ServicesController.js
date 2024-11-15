@@ -9,7 +9,6 @@ exports.getAllServices = async (req, res) => {
   }
 };
 
-
 // exports.addNewService = async (req, res) => {
 //   let { name, type, model, seat, functionality, color, overtime, price } =
 //     req.body;

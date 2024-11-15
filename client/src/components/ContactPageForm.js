@@ -78,10 +78,7 @@ const ContactPageForm = () => {
           className="ms-2 text-sm font-medium text-gray-900 "
         >
           I agree with the{" "}
-          <a
-            href="#"
-            className="text-blue-600 hover:underline"
-          >
+          <a href="#" className="text-blue-600 hover:underline">
             terms and conditions
           </a>
           .

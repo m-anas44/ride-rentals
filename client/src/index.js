@@ -1,5 +1,5 @@
-import React, {StrictMode} from "react";
-import ReactDOM from 'react-dom'; // Import createRoot
+import React, { StrictMode } from "react";
+import ReactDOM from "react-dom"; // Import   
 import NavBar from "./layout/NavBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -29,5 +29,5 @@ ReactDOM.render(
   <StrictMode>
     <App />
   </StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

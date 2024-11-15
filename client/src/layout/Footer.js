@@ -10,14 +10,14 @@ const Footer = () => {
             <span className="ml-3 text-xl">RideRentals</span>
           </a>
           <p className="mt-4 md:mt-8 text-sm md:text-base text-gray-500">
-            RideRentals offers one of the most professional car rental
-            services throughout Pakistan. <br /> Our services extend to all the
-            major cities such as Islamabad, Lahore, Karachi, Faisalabad,
-            Rawalpindi and Sialkot. You can use our cars to visit holiday
-            destinations in addition to commuting from one place to another. We
-            offer quality rent car Pakistan service at the most economical
-            rates. We guarantee 100% customer satisfaction. This also helps us
-            to retain our customers.
+            RideRentals offers one of the most professional car rental services
+            throughout Pakistan. <br /> Our services extend to all the major
+            cities such as Islamabad, Lahore, Karachi, Faisalabad, Rawalpindi
+            and Sialkot. You can use our cars to visit holiday destinations in
+            addition to commuting from one place to another. We offer quality
+            rent car Pakistan service at the most economical rates. We guarantee
+            100% customer satisfaction. This also helps us to retain our
+            customers.
           </p>
           <div class="flex sm:flex-row flex-col mt-3 gap-3">
             <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
@@ -51,9 +51,7 @@ const Footer = () => {
             </button>
           </div>
         </div>
-        <form
-          className="flex-1 p-4 flex flex-col lg:ml-5 w-full mt-8 md:mt-0 rounded-md bg-blur text-gray-200 border-4 border-opacity-45 border-gray-200"
-        >
+        <form className="flex-1 p-4 flex flex-col lg:ml-5 w-full mt-8 md:mt-0 rounded-md bg-blur text-gray-200 border-4 border-opacity-45 border-gray-200">
           <h2 className=" text-2xl mb-1 font-bold title-font text-gray-900">
             Give us a Feedback
           </h2>

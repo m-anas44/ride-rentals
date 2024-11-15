@@ -59,7 +59,7 @@ const ContactAccordion = () => {
             aria-controls="accordion-open-body-2"
           >
             <div className="flex gap-x-2">
-              <BsInboxesFill  className="w-6 h-6"/>
+              <BsInboxesFill className="w-6 h-6" />
               <div>
                 <h2 className="text-left">Corporate</h2>
                 <p className="font-normal mt-2">

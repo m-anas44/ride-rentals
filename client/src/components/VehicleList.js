@@ -19,21 +19,21 @@ const VehicleList = () => {
   return (
     <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
       {servies.map((value) => {
-          return (
-            <div key={value._id} className="m-0 p-0">
-              <VehicleCard
-                name={value.name}
-                type={value.type}
-                model={value.model}
-                seat={value.seat}
-                functionality={value.functionality}
-                color={value.color}
-                overtime={value.overtime}
-                price={value.price}
-              />
-            </div>
-          );
-        })}
+        return (
+          <div key={value._id} className="m-0 p-0">
+            <VehicleCard
+              name={value.name}
+              type={value.type}
+              model={value.model}
+              seat={value.seat}
+              functionality={value.functionality}
+              color={value.color}
+              overtime={value.overtime}
+              price={value.price}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 };

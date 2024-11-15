@@ -8,7 +8,7 @@ const ServiceSchema = new mongoose.Schema({
   functionality: { type: String, required: true },
   color: { type: String, required: true },
   overtime: { type: String, required: true },
-  price: { type: String, required: true }
+  price: { type: String, required: true },
 });
 
 const Service = mongoose.model("Service", ServiceSchema);
