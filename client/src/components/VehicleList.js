@@ -8,7 +8,7 @@ const VehicleList = () => {
       try {
         const res = await fetch("http://localhost:5000/api/services");
         const data = await res.json();
-        const slicedData = data.slice(0, 3);
+        const slicedData = data.slice(0, 4);
         setServices(slicedData);
       } catch (err) {
         console.log("failed to fetch services", err);
@@ -17,7 +17,7 @@ const VehicleList = () => {
     fetchServices();
   }, []);
   return (
-    <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+    <div className="container mx-auto grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-5 m-5">
       {servies.map((value) => {
         return (
           <div key={value._id} className="m-0 p-0">

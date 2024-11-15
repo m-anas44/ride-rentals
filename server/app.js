@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-require('dotenv').config()
+require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -18,10 +18,8 @@ app.listen(PORT, () => {
   console.log(`Server is running on the port ${PORT}`);
 });
 
-const uri = `mongodb+srv://manasansari1438:3h2dTwHiBARX8R7Q@cluster47.hui9pwa.mongodb.net/test`;
-
 mongoose
-  .connect(uri, {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -41,6 +39,3 @@ app.post("/api/services", async (req, res) => {
   const result = await service.save();
   res.send(result);
 });
-
-
-
