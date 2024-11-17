@@ -5,7 +5,7 @@ import { services } from "../mockData/services";
 const VehicleList = () => {
   const filteredServices = services.slice(0, 3);
   return (
-    <div className="container mx-auto grid grid-cols-[repeat(auto-fill,_minmax(350px,_1fr))] gap-5 m-5">
+    <div className="container mx-auto grid grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))] gap-5 m-5">
       {filteredServices.map((value) => {
         return (
           <div key={value._id} className="m-0 p-0">

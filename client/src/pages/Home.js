@@ -7,7 +7,7 @@ import WhyRideRental from "../components/WhyRideRental";
 import VehicleList from "../components/VehicleList";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import BannerLogin from "../components/BannerLogin"
+import BannerLogin from "../components/BannerLogin";
 const Home = () => {
   return (
     <div>
@@ -31,7 +31,9 @@ const Home = () => {
             </button>
           </Link>
         </div>
-        <VehicleList />
+        <div className="mx-4">
+          <VehicleList />
+        </div>
       </div>
       <div className="px-4">
         <Questionaries />
