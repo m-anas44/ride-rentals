@@ -6,9 +6,9 @@ import { IoIosColorFilter } from "react-icons/io";
 
 const VehicleCard = (props) => {
   return (
-    <section className="w-full mx-auto bg-white border border-gray-200 rounded-lg shadow hover:scale-105 duration-300 transition-all ease-in-out">
+    <section className="w-full h-full mx-auto bg-white border border-gray-200 rounded-lg shadow hover:scale-105 duration-300 transition-all ease-in-out">
       <img
-        className="rounded-t-lg max-h-[20ch] object-cover w-full"
+        className="rounded-t-lg object-cover w-full"
         src={props.img}
         alt="product"
       />
