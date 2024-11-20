@@ -32,7 +32,7 @@ const ClientFeedback = () => {
                     <img
                       className="lg:w-48 lg:h-48 mt-4 mx-auto w-36 h-36 object-cover object-center rounded-full border-4 border-gray-900 border-opacity-75"
                       src={clients[item].image}
-                      alt="client image"
+                      alt="client avatar"
                     />
                     <div className="p-6">
                       <h2 className="title-font text-lg font-medium text-gray-100 mb-3">

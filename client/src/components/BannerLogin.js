@@ -23,27 +23,21 @@ class BannerLogin extends React.Component {
         className="fixed z-50 flex flex-col lg:flex-row justify-between w-[calc(100%-2rem)] p-4 -translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow-sm lg:max-w-7xl left-1/2 bottom-6 dark:bg-gray-700 dark:border-gray-600"
       >
         <div className="flex flex-col items-start mb-3 me-4 md:items-center md:flex-row lg:mb-0">
-          <a className="flex title-font font-medium items-center text-gray-100 mr-3 mb-3 md:mb-0 pr-3 md:border-r border-0 border-gray-400">
+          <div className="flex title-font font-medium items-center text-gray-100 mr-3 mb-3 md:mb-0 pr-3 md:border-r border-0 border-gray-400">
             <img src={logo} alt="logo" className="h-8" />
             <span className="ml-3 text-xl">RideRentals</span>
-          </a>
+          </div>
           <p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
             RideRentals offers one of the most professional car rental services.
           </p>
         </div>
         <div className="flex items-center flex-shrink-0">
-          <a
-            href="#"
-            className="px-5 py-2 me-2 text-xs font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-          >
+          <button className="px-5 py-2 me-2 text-xs font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
             Login
-          </a>
-          <a
-            href="#"
-            className="px-5 py-2 me-2 text-xs font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-          >
+          </button>
+          <button className="px-5 py-2 me-2 text-xs font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
             Register
-          </a>
+          </button>
           <button
             onClick={this.handleClose}
             type="button"
