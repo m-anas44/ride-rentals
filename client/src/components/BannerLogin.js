@@ -1,7 +1,21 @@
 import React from "react";
 import logo from "../assets/rideLogo1.png";
+
 class BannerLogin extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isVisible: true,
+    };
+  }
+
+  handleClose = () => {
+    this.setState({ isVisible: false });
+  };
+
   render() {
+    if (!this.state.isVisible) return null; // Don't render if not visible
+
     return (
       <section
         id="marketing-banner"
@@ -10,7 +24,7 @@ class BannerLogin extends React.Component {
       >
         <div className="flex flex-col items-start mb-3 me-4 md:items-center md:flex-row lg:mb-0">
           <a className="flex title-font font-medium items-center text-gray-100 mr-3 mb-3 md:mb-0 pr-3 md:border-r border-0 border-gray-400">
-            <img src={logo} alt="logo" className="h-8"></img>
+            <img src={logo} alt="logo" className="h-8" />
             <span className="ml-3 text-xl">RideRentals</span>
           </a>
           <p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
@@ -31,7 +45,7 @@ class BannerLogin extends React.Component {
             Register
           </a>
           <button
-            data-dismiss-target="#marketing-banner"
+            onClick={this.handleClose}
             type="button"
             className="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white"
           >
